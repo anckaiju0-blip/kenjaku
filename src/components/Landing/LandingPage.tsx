@@ -443,97 +443,128 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                       
                       <div className="space-y-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white mb-3">Feasibility and Viability Analysis</h3>
-                          
-                          {/* Feasibility Analysis Section */}
-                          <div className="mb-6">
-                            <h4 className="text-base font-bold text-blue-300 mb-3">🔍 Feasibility Analysis</h4>
-                            <div className="space-y-2 text-sm">
-                              <div>
-                                <span className="font-bold text-white">• Technology readiness:</span>
-                                <span className="text-gray-200"> Hyperledger Fabric is open-source, already tested in supply chain (e.g., food traceability).</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">• Low-cost deployment:</span>
-                                <span className="text-gray-200"> Runs on commodity cloud servers (AWS/Azure/On-Prem); no per-transaction fees.</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">• Data capture:</span>
-                                <span className="text-gray-200"> GPS-enabled Android phones (already in use by most farmers) + QR code printers/scanners (cheap, available).</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">• SMS integration:</span>
-                                <span className="text-gray-200"> Existing APIs (Twilio, Gupshup, BSNL SMS Gateway) work even in low-connectivity areas.</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Challenges Section */}
-                          <div className="mb-6">
-                            <h4 className="text-base font-bold text-orange-300 mb-3">⚠️ Challenges (Real-World Issues)</h4>
-                            <div className="space-y-2 text-sm">
-                              <div>
-                                <span className="font-bold text-white">1. Farmer adoption barrier →</span>
-                                <span className="text-gray-200"> Farmers may not be tech-savvy.</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">2. Connectivity gaps →</span>
-                                <span className="text-gray-200"> Remote villages may lack 4G.</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">3. Data accuracy →</span>
-                                <span className="text-gray-200"> Fake entries or wrong plant identification possible.</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">4. Operational costs →</span>
-                                <span className="text-gray-200"> Training, device distribution, server hosting.</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Practical Strategies Section */}
-                          <div className="mb-6">
-                            <h4 className="text-base font-bold text-green-300 mb-3">⚙️ Practical Strategies</h4>
-                            <div className="space-y-2 text-sm">
-                              <div>
-                                <span className="font-bold text-white">• Farmer Training & Incentives:</span>
-                                <span className="text-gray-200"> Hands-on training + premium price for verified herbs.</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">• Offline-first app:</span>
-                                <span className="text-gray-200"> Local storage → syncs when internet available (already supported in React Native, Flutter).</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">• Verification Layer:</span>
-                                <span className="text-gray-200"> Lab test + GPS cross-check ensures no fake entries.</span>
-                              </div>
-                              <div>
-                                <span className="font-bold text-white">• Partnership Model:</span>
-                                <span className="text-gray-200"> Costs split between AYUSH ministry, pharma companies, and cooperatives.</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Revenue Model Section */}
-                          <div className="bg-white/5 p-4 rounded-xl border border-white/10">
-                            <h4 className="text-base font-bold text-purple-300 mb-3">💰 Revenue Model</h4>
-                            <div className="space-y-3 text-sm">
-                              <div>
-                                <span className="font-bold text-white">1. Subscription from Manufacturers & Exporters</span>
-                                <div className="ml-4 space-y-1 text-gray-200">
-                                  <div>• Ayurvedic product manufacturers/exporters pay a monthly/annual fee to use HERBIONYX for traceability, compliance reporting, and QR labeling.</div>
-                                  <div>• Logical → these companies benefit directly (export clearance, consumer trust).</div>
+                          {hoveredWindow === 2 ? ( // Feasibility & Viability (Target icon, index 2)
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Feasibility and Viability Analysis</h3>
+                              
+                              {/* Feasibility Analysis Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">🔍 Feasibility Analysis</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Technology readiness:</span>
+                                    <span className="text-gray-200"> Hyperledger Fabric is open-source, already tested in supply chain (e.g., food traceability).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Low-cost deployment:</span>
+                                    <span className="text-gray-200"> Runs on commodity cloud servers (AWS/Azure/On-Prem); no per-transaction fees.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Data capture:</span>
+                                    <span className="text-gray-200"> GPS-enabled Android phones (already in use by most farmers) + QR code printers/scanners (cheap, available).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• SMS integration:</span>
+                                    <span className="text-gray-200"> Existing APIs (Twilio, Gupshup, BSNL SMS Gateway) work even in low-connectivity areas.</span>
+                                  </div>
                                 </div>
                               </div>
-                              <div>
-                                <span className="font-bold text-white">2. Government/AYUSH Contracts</span>
-                                <div className="ml-4 space-y-1 text-gray-200">
-                                  <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
-                                  <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
+
+                              {/* Challenges Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-orange-300 mb-3">⚠️ Challenges (Real-World Issues)</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">1. Farmer adoption barrier →</span>
+                                    <span className="text-gray-200"> Farmers may not be tech-savvy.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">2. Connectivity gaps →</span>
+                                    <span className="text-gray-200"> Remote villages may lack 4G.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">3. Data accuracy →</span>
+                                    <span className="text-gray-200"> Fake entries or wrong plant identification possible.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">4. Operational costs →</span>
+                                    <span className="text-gray-200"> Training, device distribution, server hosting.</span>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
+
+                              {/* Practical Strategies Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-green-300 mb-3">⚙️ Practical Strategies</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Farmer Training & Incentives:</span>
+                                    <span className="text-gray-200"> Hands-on training + premium price for verified herbs.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Offline-first app:</span>
+                                    <span className="text-gray-200"> Local storage → syncs when internet available (already supported in React Native, Flutter).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Verification Layer:</span>
+                                    <span className="text-gray-200"> Lab test + GPS cross-check ensures no fake entries.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Partnership Model:</span>
+                                    <span className="text-gray-200"> Costs split between AYUSH ministry, pharma companies, and cooperatives.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Revenue Model Section */}
+                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <h4 className="text-base font-bold text-purple-300 mb-3">💰 Revenue Model</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">1. Subscription from Manufacturers & Exporters</span>
+                                    <div className="ml-4 space-y-1 text-gray-200">
+                                      <div>• Ayurvedic product manufacturers/exporters pay a monthly/annual fee to use HERBIONYX for traceability, compliance reporting, and QR labeling.</div>
+                                      <div>• Logical → these companies benefit directly (export clearance, consumer trust).</div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">2. Government/AYUSH Contracts</span>
+                                    <div className="ml-4 space-y-1 text-gray-200">
+                                      <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
+                                      <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : (
+                            // All other windows show "Addressing the Problem" format
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Addressing the Problem</h3>
+                              <div className="space-y-3 text-sm">
+                                <div>
+                                  <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
+                                  <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Opaque Supply Chain:</span>
+                                  <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Sustainability Risks:</span>
+                                  <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Consumer Mistrust:</span>
+                                  <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Export Barriers:</span>
+                                  <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
+                                </div>
+                              </div>
+                            </>
+                          )}
                         </div>
                       </div>
                     </div>
