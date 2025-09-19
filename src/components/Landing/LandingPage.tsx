@@ -443,13 +443,33 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                       
                       <div className="space-y-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white mb-2">Overview</h3>
-                          <p className="text-gray-100 text-sm leading-relaxed">{windowData.description}</p>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-lg font-semibold text-white mb-2">Details</h3>
-                          <p className="text-gray-200 text-sm leading-relaxed">{windowData.details}</p>
+                          <h3 className="text-lg font-semibold text-white mb-3">Smart India Hackathon 2025</h3>
+                          <div className="space-y-3 text-sm">
+                            <div>
+                              <span className="font-bold text-white">Problem Statement ID</span>
+                              <span className="text-gray-200"> – 25027</span>
+                            </div>
+                            <div>
+                              <span className="font-bold text-white">Problem Statement Title</span>
+                              <span className="text-gray-200">- Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label</span>
+                            </div>
+                            <div>
+                              <span className="font-bold text-white">Theme</span>
+                              <span className="text-gray-200">- Blockchain & Cybersecurity</span>
+                            </div>
+                            <div>
+                              <span className="font-bold text-white">PS Category</span>
+                              <span className="text-gray-200">- Software</span>
+                            </div>
+                            <div>
+                              <span className="font-bold text-white">Team ID</span>
+                              <span className="text-gray-200">-</span>
+                            </div>
+                            <div>
+                              <span className="font-bold text-white">Team Name</span>
+                              <span className="text-gray-200">- The Sentinels</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
