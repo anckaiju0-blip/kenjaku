@@ -58,8 +58,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     },
     {
       id: 5,
-      icon: Users,
-      title: "Team & Execution",
+      icon: GEAR,
+      title: "TECHNICAL APPROACH",
       description: "Experienced multidisciplinary team with proven expertise in blockchain, healthcare, and system integration for successful delivery",
       details: "Our team comprises blockchain developers, healthcare domain experts, UI/UX designers, and project managers with combined 50+ years experience in delivering enterprise solutions.",
       color: "from-teal-500/10 to-cyan-500/10",
