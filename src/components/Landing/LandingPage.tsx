@@ -23,9 +23,9 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     {
       id: 1,
       icon: Info,
-      title: "SIH Info",
-      description: "Smart India Hackathon 2024 - Solving real-world problems through innovative technology solutions for Ayurvedic supply chain transparency",
-      details: "Smart India Hackathon 2024 focuses on developing innovative solutions for real-world problems. Our project addresses the critical need for transparency and authenticity in the Ayurvedic medicine supply chain using cutting-edge blockchain technology.",
+      title: "Smart India Hackathon 2025",
+      description: "Problem Statement ID: 25027 | Theme: Blockchain & Cybersecurity | PS Category: Software",
+      details: "Problem Statement Title: Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label. Team ID: [To be assigned]. Team Name: The Sentinels. This hackathon focuses on creating innovative blockchain solutions for healthcare transparency and supply chain management in the traditional medicine sector.",
       color: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-400/30"
     },
@@ -42,8 +42,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       id: 3,
       icon: Target,
       title: "Feasibility & Viability",
-      description: "Comprehensive impact analysis showcasing potential benefits for all stakeholders and measurable social, economic, and environmental outcomes",
-      details: "Our solution delivers transformative impact across multiple dimensions: empowering rural communities through fair pricing and digital inclusion, building consumer trust through transparency, reducing fraud to boost herbal exports, incentivizing sustainable harvesting practices, and promoting biodiversity conservation through geo-tracking and quotas.",
+      description: "Comprehensive feasibility analysis, real-world challenges assessment, and practical implementation strategies for nationwide deployment",
+      details: "Our comprehensive analysis covers technology readiness with Hyperledger Fabric, low-cost cloud deployment, GPS-enabled data capture, and SMS integration for low-connectivity areas. We address real-world challenges including farmer adoption barriers, connectivity gaps, data accuracy concerns, and operational costs through practical strategies like farmer training programs, offline-first applications, verification layers, and partnership models with AYUSH ministry and pharma companies.",
       color: "from-green-500/10 to-emerald-500/10",
       borderColor: "border-green-400/30"
     },
@@ -51,8 +51,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       id: 4,
       icon: TrendingUp,
       title: "Impact & Benefits",
-      description: "Comprehensive feasibility analysis, real-world challenges assessment, and practical implementation strategies for nationwide deployment",
-      details: "Our comprehensive analysis covers technology readiness with Hyperledger Fabric, low-cost cloud deployment, GPS-enabled data capture, and SMS integration for low-connectivity areas. We address real-world challenges including farmer adoption barriers, connectivity gaps, data accuracy concerns, and operational costs through practical strategies like farmer training programs, offline-first applications, verification layers, and partnership models with AYUSH ministry and pharma companies.",
+      description: "Comprehensive impact analysis showcasing potential benefits for all stakeholders and measurable social, economic, and environmental outcomes",
+      details: "Our solution delivers transformative impact across multiple dimensions: empowering rural communities through fair pricing and digital inclusion, building consumer trust through transparency, reducing fraud to boost herbal exports, incentivizing sustainable harvesting practices, and promoting biodiversity conservation through geo-tracking and quotas.",
       color: "from-orange-500/10 to-red-500/10",
       borderColor: "border-orange-400/30"
     },
@@ -443,94 +443,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                       
                       <div className="space-y-4">
                         <div>
-                          {hoveredWindow === 2 ? ( // Feasibility & Viability (Target icon, index 2) - NOW SHOWS IMPACT CONTENT
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-3">Impact and Benefits</h3>
-                              
-                              {/* Potential Impact Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-blue-300 mb-3">🎯 Potential Impact</h4>
-                                <div className="space-y-3 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white underline">Collectors/Farmers:</span>
-                                    <span className="text-gray-200"> Get fair prices, recognition, and trust by proving sustainable harvesting.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white underline">Manufacturers:</span>
-                                    <span className="text-gray-200"> Gain authentic raw materials, reducing adulteration risks.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white underline">Consumers:</span>
-                                    <span className="text-gray-200"> Can scan QR code to verify origin → trust in AYUSH-certified products.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white underline">Regulators (AYUSH, Govt):</span>
-                                    <span className="text-gray-200"> Real-time monitoring of herbal supply chains → better policy enforcement.</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Benefits Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-green-300 mb-3">💰 Benefits</h4>
-                                
-                                {/* Social Benefits */}
-                                <div className="mb-4">
-                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
-                                    <h5 className="text-white font-bold text-center">SOCIAL</h5>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Empowers rural communities with digital inclusion.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Builds trust in traditional medicine through transparency.</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                {/* Economic Benefits */}
-                                <div className="mb-4">
-                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
-                                    <h5 className="text-white font-bold text-center">ECONOMIC</h5>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Reduces fraud and adulteration → boosts herbal exports.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Verified supply chain → increases market value of Indian herbs.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Incentivizes sustainable harvesting with premium pricing.</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                {/* Environmental Benefits */}
-                                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
-                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
-                                    <h5 className="text-white font-bold text-center">ENVIRONMENTAL</h5>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Prevents over-harvesting with geo-tracking + quotas.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Promotes biodiversity conservation by monitoring collection zones.</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
-                          ) : hoveredWindow === 3 ? ( // Impact & Benefits (TrendingUp icon, index 3) - NOW SHOWS FEASIBILITY CONTENT
+                          {hoveredWindow === 2 ? ( // Feasibility & Viability (Target icon, index 2)
                             <>
                               <h3 className="text-lg font-semibold text-white mb-3">Feasibility and Viability Analysis</h3>
                               
@@ -619,6 +532,93 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                     <div className="ml-4 space-y-1 text-gray-200">
                                       <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
                                       <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 3 ? ( // Impact & Benefits (TrendingUp icon, index 3)
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Impact and Benefits</h3>
+                              
+                              {/* Potential Impact Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">🎯 Potential Impact</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white underline">Collectors/Farmers:</span>
+                                    <span className="text-gray-200"> Get fair prices, recognition, and trust by proving sustainable harvesting.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Manufacturers:</span>
+                                    <span className="text-gray-200"> Gain authentic raw materials, reducing adulteration risks.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Consumers:</span>
+                                    <span className="text-gray-200"> Can scan QR code to verify origin → trust in AYUSH-certified products.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Regulators (AYUSH, Govt):</span>
+                                    <span className="text-gray-200"> Real-time monitoring of herbal supply chains → better policy enforcement.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Benefits Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-green-300 mb-3">💰 Benefits</h4>
+                                
+                                {/* Social Benefits */}
+                                <div className="mb-4">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">SOCIAL</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Empowers rural communities with digital inclusion.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Builds trust in traditional medicine through transparency.</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Economic Benefits */}
+                                <div className="mb-4">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">ECONOMIC</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Reduces fraud and adulteration → boosts herbal exports.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Verified supply chain → increases market value of Indian herbs.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Incentivizes sustainable harvesting with premium pricing.</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Environmental Benefits */}
+                                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">ENVIRONMENTAL</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Prevents over-harvesting with geo-tracking + quotas.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Promotes biodiversity conservation by monitoring collection zones.</span>
                                     </div>
                                   </div>
                                 </div>
@@ -715,56 +715,30 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
                             </>
-                          ) : hoveredWindow === 0 ? (
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-2">Overview</h3>
-                              <p className="text-gray-100 text-sm leading-relaxed mb-4">{windowData.description}</p>
-                              
-                              <div>
-                                <h3 className="text-lg font-semibold text-white mb-2">Details</h3>
-                                <p className="text-gray-200 text-sm leading-relaxed">{windowData.details}</p>
-                              </div>
-
-                              <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
-                                <div className="flex items-center justify-center">
-                                  <div className="bg-white p-3 rounded-lg">
-                                    <svg width="120" height="120" viewBox="0 0 200 200" className="block">
-                                      <rect width="200" height="200" fill="white"/>
-                                      <rect x="10" y="10" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
-                                      <rect x="130" y="10" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
-                                      <rect x="10" y="130" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
-                                      <rect x="25" y="25" width="30" height="30" fill="black"/>
-                                      <rect x="145" y="25" width="30" height="30" fill="black"/>
-                                      <rect x="25" y="145" width="30" height="30" fill="black"/>
-                                      <rect x="80" y="10" width="10" height="10" fill="black"/>
-                                      <rect x="100" y="10" width="10" height="10" fill="black"/>
-                                      <rect x="80" y="30" width="10" height="10" fill="black"/>
-                                      <rect x="90" y="30" width="10" height="10" fill="black"/>
-                                      <rect x="110" y="30" width="10" height="10" fill="black"/>
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
                           ) : (
                             // All other windows show "Addressing the Problem" format
                             <>
-                              <h3 className="text-lg font-semibold text-white mb-2">Overview</h3>
-                              <p className="text-gray-100 text-sm leading-relaxed mb-4">{windowData.description}</p>
-                              
-                              <div>
-                                <h3 className="text-lg font-semibold text-white mb-2">Details</h3>
-                                <p className="text-gray-200 text-sm leading-relaxed">{windowData.details}</p>
-                              </div>
-
-                              <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
-                                <div className="flex items-center justify-center h-32 bg-white/5 rounded-lg border border-dashed border-white/20">
-                                  <div className="text-center">
-                                    <div className="w-12 h-12 mx-auto mb-2 bg-white/10 rounded-full flex items-center justify-center">
-                                      <windowData.icon className="h-6 w-6 text-white/70" />
-                                    </div>
-                                    <p className="text-white/70 text-sm font-medium">Content Preview</p>
-                                  </div>
+                              <h3 className="text-lg font-semibold text-white mb-3">Addressing the Problem</h3>
+                              <div className="space-y-3 text-sm">
+                                <div>
+                                  <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
+                                  <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Opaque Supply Chain:</span>
+                                  <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Sustainability Risks:</span>
+                                  <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Consumer Mistrust:</span>
+                                  <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Export Barriers:</span>
+                                  <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
                                 </div>
                               </div>
                             </>
