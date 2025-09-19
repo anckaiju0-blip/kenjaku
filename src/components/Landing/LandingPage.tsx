@@ -51,8 +51,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       id: 4,
       icon: TrendingUp,
       title: "Impact & Benefits",
-      description: "Transforming healthcare transparency with measurable social impact, economic benefits, and consumer trust enhancement",
-      details: "Expected 40% reduction in counterfeit medicines, 60% improvement in supply chain transparency, and enhanced consumer confidence. Economic impact includes job creation and export potential.",
+      description: "Comprehensive impact analysis showcasing potential benefits for all stakeholders and measurable social, economic, and environmental outcomes",
+      details: "Our solution delivers transformative impact across multiple dimensions: empowering rural communities through fair pricing and digital inclusion, building consumer trust through transparency, reducing fraud to boost herbal exports, incentivizing sustainable harvesting practices, and promoting biodiversity conservation through geo-tracking and quotas.",
       color: "from-orange-500/10 to-red-500/10",
       borderColor: "border-orange-400/30"
     },
@@ -532,6 +532,93 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                     <div className="ml-4 space-y-1 text-gray-200">
                                       <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
                                       <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 3 ? ( // Impact & Benefits (TrendingUp icon, index 3)
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Impact and Benefits</h3>
+                              
+                              {/* Potential Impact Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">🎯 Potential Impact</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white underline">Collectors/Farmers:</span>
+                                    <span className="text-gray-200"> Get fair prices, recognition, and trust by proving sustainable harvesting.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Manufacturers:</span>
+                                    <span className="text-gray-200"> Gain authentic raw materials, reducing adulteration risks.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Consumers:</span>
+                                    <span className="text-gray-200"> Can scan QR code to verify origin → trust in AYUSH-certified products.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Regulators (AYUSH, Govt):</span>
+                                    <span className="text-gray-200"> Real-time monitoring of herbal supply chains → better policy enforcement.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Benefits Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-green-300 mb-3">💰 Benefits</h4>
+                                
+                                {/* Social Benefits */}
+                                <div className="mb-4">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">SOCIAL</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Empowers rural communities with digital inclusion.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Builds trust in traditional medicine through transparency.</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Economic Benefits */}
+                                <div className="mb-4">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">ECONOMIC</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Reduces fraud and adulteration → boosts herbal exports.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Verified supply chain → increases market value of Indian herbs.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Incentivizes sustainable harvesting with premium pricing.</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Environmental Benefits */}
+                                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">ENVIRONMENTAL</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Prevents over-harvesting with geo-tracking + quotas.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Promotes biodiversity conservation by monitoring collection zones.</span>
                                     </div>
                                   </div>
                                 </div>
