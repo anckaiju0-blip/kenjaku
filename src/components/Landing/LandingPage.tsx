@@ -39,15 +39,6 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       borderColor: "border-purple-400/30"
     },
     {
-      id: 3,
-      icon: Target,
-      title: "Feasibility & Viability",
-      description: "Comprehensive feasibility analysis, real-world challenges assessment, and practical implementation strategies for nationwide deployment",
-      details: "Our comprehensive analysis covers technology readiness with Hyperledger Fabric, low-cost cloud deployment, GPS-enabled data capture, and SMS integration for low-connectivity areas. We address real-world challenges including farmer adoption barriers, connectivity gaps, data accuracy concerns, and operational costs through practical strategies like farmer training programs, offline-first applications, verification layers, and partnership models with AYUSH ministry and pharma companies.",
-      color: "from-green-500/10 to-emerald-500/10",
-      borderColor: "border-green-400/30"
-    },
-    {
       id: 4,
       icon: TrendingUp,
       title: "Impact & Benefits",
@@ -55,6 +46,15 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       details: "Our solution delivers transformative impact across multiple dimensions: empowering rural communities through fair pricing and digital inclusion, building consumer trust through transparency, reducing fraud to boost herbal exports, incentivizing sustainable harvesting practices, and promoting biodiversity conservation through geo-tracking and quotas.",
       color: "from-orange-500/10 to-red-500/10",
       borderColor: "border-orange-400/30"
+    ,
+   {
+      id: 3,
+      icon: Target,
+      title: "Feasibility & Viability",
+      description: "Comprehensive feasibility analysis, real-world challenges assessment, and practical implementation strategies for nationwide deployment",
+      details: "Our comprehensive analysis covers technology readiness with Hyperledger Fabric, low-cost cloud deployment, GPS-enabled data capture, and SMS integration for low-connectivity areas. We address real-world challenges including farmer adoption barriers, connectivity gaps, data accuracy concerns, and operational costs through practical strategies like farmer training programs, offline-first applications, verification layers, and partnership models with AYUSH ministry and pharma companies.",
+      color: "from-green-500/10 to-emerald-500/10",
+      borderColor: "border-green-400/30"
     },
     {
       id: 5,
