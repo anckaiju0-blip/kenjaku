@@ -251,7 +251,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
 
   const closeModal = useCallback(() => setHoveredWindow(null), []);
 
-  // Memoized window position calculation - FIXED VERSION
+  // Memoized window position calculation
   const windowPositions = useMemo(() => {
     const radius = window.innerWidth > 768 ? 280 : 180;
     return circularWindows.map((_, index) => {
@@ -337,10 +337,10 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
             </h1>
           </div>
 
-          {/* FIXED: Container for centered positioning */}
+          {/* Container for centered positioning */}
           <div className="absolute inset-0 flex items-center justify-center z-25">
             
-            {/* Central Enter Button - HIGHER Z-INDEX */}
+            {/* Central Enter Button */}
             <div className="relative z-40">
               <div className="relative">
                 <div className="absolute -inset-8 md:-inset-12 rounded-full border border-white/20 animate-ping opacity-70" />
@@ -363,7 +363,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
               </div>
             </div>
 
-            {/* FIXED: Revolving Circular Windows Container */}
+            {/* Revolving Circular Windows Container */}
             <div 
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
               style={{
@@ -373,7 +373,6 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                 transition: hoveredWindow !== null ? 'transform 0.1s ease-out' : 'none'
               }}
             >
-              {/* FIXED: Properly centered circle container */}
               <div className="relative w-0 h-0">
                 {circularWindows.map((window, index) => {
                   const position = windowPositions[index];
@@ -478,11 +477,10 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
                             </>
-                          ) : hoveredWindow === 1 ? ( // HERBIONYX Complete Solution (Leaf icon, index 1)
+                          ) : hoveredWindow === 1 ? (
                             <>
                               <h3 className="text-lg font-semibold text-white mb-3">HerbionYX - Blockchain Traceability for Ayurvedic Herbs</h3>
                               
-                              {/* Proposed Solution Section */}
                               <div className="mb-6">
                                 <h4 className="text-base font-bold text-blue-300 mb-3">💡 Proposed Solution</h4>
                                 <div className="bg-blue-500/10 p-4 rounded-xl border border-blue-400/30">
@@ -492,7 +490,6 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
 
-                              {/* Innovation & Uniqueness Section */}
                               <div className="mb-6">
                                 <h4 className="text-base font-bold text-purple-300 mb-3">🎓 Innovation & Uniqueness</h4>
                                 <div className="space-y-2 text-sm">
@@ -515,7 +512,6 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
 
-                              {/* Solution Approach Section */}
                               <div className="mb-6">
                                 <h4 className="text-base font-bold text-orange-300 mb-3">🧩 Solution Approach</h4>
                                 <div className="space-y-2 text-sm">
@@ -542,7 +538,6 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
 
-                              {/* Addressing the Problem Section */}
                               <div className="bg-white/5 p-4 rounded-xl border border-white/10">
                                 <h4 className="text-base font-bold text-green-300 mb-3">💡 Addressing the Problem</h4>
                                 <div className="space-y-2 text-sm">
@@ -569,13 +564,356 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
                             </>
-                          ) : hoveredWindow === 2 ? ( // Technical Approach (Settings icon, index 2)
+                          ) : hoveredWindow === 2 ? (
                             <>
                               <h3 className="text-lg font-semibold text-white mb-3">Technical Approach</h3>
                               
-                              {/* Tech Stack Section */}
                               <div className="mb-6">
                                 <h4 className="text-base font-bold text-blue-300 mb-3">🔧 Technical Stack</h4>
                                 <div className="space-y-2 text-sm">
                                   <div>
-                                    <span className="font-bold text-white">• Blockchain:
+                                    <span className="font-bold text-white">• Blockchain:</span>
+                                    <span className="text-gray-200"> Hyperledger Fabric for enterprise-grade permissioned blockchain</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Frontend:</span>
+                                    <span className="text-gray-200"> React.js with responsive design for web and mobile interfaces</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Backend:</span>
+                                    <span className="text-gray-200"> Node.js microservices architecture with REST APIs</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Storage:</span>
+                                    <span className="text-gray-200"> IPFS for decentralized file storage, MongoDB for metadata</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Security:</span>
+                                    <span className="text-gray-200"> Multi-signature authentication, encryption at rest and transit</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-purple-300 mb-3">🏗️ System Architecture</h4>
+                                <div className="bg-purple-500/10 p-4 rounded-xl border border-purple-400/30">
+                                  <div className="space-y-3 text-sm text-gray-200">
+                                    <div>
+                                      <span className="font-bold text-white">Data Collection Layer:</span> Mobile apps for farmers/collectors with GPS integration and QR code scanning
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">Blockchain Layer:</span> Hyperledger Fabric network with smart contracts for validation and immutable record keeping
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">API Gateway:</span> RESTful services connecting frontend applications to blockchain and storage systems
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">Consumer Interface:</span> Web portal and mobile app for product verification and traceability viewing
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <h4 className="text-base font-bold text-green-300 mb-3">⚙️ Implementation Strategy</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">Phase 1:</span>
+                                    <span className="text-gray-200"> Core blockchain infrastructure and basic data capture</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">Phase 2:</span>
+                                    <span className="text-gray-200"> Mobile applications and farmer onboarding system</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">Phase 3:</span>
+                                    <span className="text-gray-200"> Consumer portal and QR code verification system</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">Phase 4:</span>
+                                    <span className="text-gray-200"> Integration with AYUSH systems and compliance reporting</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 3 ? (
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Feasibility and Viability Analysis</h3>
+                              
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">🔍 Feasibility Analysis</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Technology readiness:</span>
+                                    <span className="text-gray-200"> Hyperledger Fabric is open-source, already tested in supply chain (e.g., food traceability).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Low-cost deployment:</span>
+                                    <span className="text-gray-200"> Runs on commodity cloud servers (AWS/Azure/On-Prem); no per-transaction fees.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Data capture:</span>
+                                    <span className="text-gray-200"> GPS-enabled Android phones (already in use by most farmers) + QR code printers/scanners (cheap, available).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• SMS integration:</span>
+                                    <span className="text-gray-200"> Existing APIs (Twilio, Gupshup, BSNL SMS Gateway) work even in low-connectivity areas.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-orange-300 mb-3">⚠️ Challenges (Real-World Issues)</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">1. Farmer adoption barrier →</span>
+                                    <span className="text-gray-200"> Farmers may not be tech-savvy.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">2. Connectivity gaps →</span>
+                                    <span className="text-gray-200"> Remote villages may lack 4G.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">3. Data accuracy →</span>
+                                    <span className="text-gray-200"> Fake entries or wrong plant identification possible.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">4. Operational costs →</span>
+                                    <span className="text-gray-200"> Training, device distribution, server hosting.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-green-300 mb-3">⚙️ Practical Strategies</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Farmer Training & Incentives:</span>
+                                    <span className="text-gray-200"> Hands-on training + premium price for verified herbs.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Offline-first app:</span>
+                                    <span className="text-gray-200"> Local storage → syncs when internet available (already supported in React Native, Flutter).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Verification Layer:</span>
+                                    <span className="text-gray-200"> Lab test + GPS cross-check ensures no fake entries.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Partnership Model:</span>
+                                    <span className="text-gray-200"> Costs split between AYUSH ministry, pharma companies, and cooperatives.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <h4 className="text-base font-bold text-purple-300 mb-3">💰 Revenue Model</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">1. Subscription from Manufacturers & Exporters</span>
+                                    <div className="ml-4 space-y-1 text-gray-200">
+                                      <div>• Ayurvedic product manufacturers/exporters pay a monthly/annual fee to use HERBIONYX for traceability, compliance reporting, and QR labeling.</div>
+                                      <div>• Logical → these companies benefit directly (export clearance, consumer trust).</div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">2. Government/AYUSH Contracts</span>
+                                    <div className="ml-4 space-y-1 text-gray-200">
+                                      <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
+                                      <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 4 ? (
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Impact and Benefits</h3>
+                              
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">🎯 Potential Impact</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white underline">Collectors/Farmers:</span>
+                                    <span className="text-gray-200"> Get fair prices, recognition, and trust by proving sustainable harvesting.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Manufacturers:</span>
+                                    <span className="text-gray-200"> Gain authentic raw materials, reducing adulteration risks.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Consumers:</span>
+                                    <span className="text-gray-200"> Can scan QR code to verify origin → trust in AYUSH-certified products.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white underline">Regulators (AYUSH, Govt):</span>
+                                    <span className="text-gray-200"> Real-time monitoring of herbal supply chains → better policy enforcement.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-green-300 mb-3">💰 Benefits</h4>
+                                
+                                <div className="mb-4">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">SOCIAL</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Empowers rural communities with digital inclusion.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Builds trust in traditional medicine through transparency.</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="mb-4">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">ECONOMIC</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Reduces fraud and adulteration → boosts herbal exports.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Verified supply chain → increases market value of Indian herbs.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Incentivizes sustainable harvesting with premium pricing.</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
+                                    <h5 className="text-white font-bold text-center">ENVIRONMENTAL</h5>
+                                  </div>
+                                  <div className="space-y-2 text-sm">
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Prevents over-harvesting with geo-tracking + quotas.</span>
+                                    </div>
+                                    <div>
+                                      <span className="font-bold text-white">•</span>
+                                      <span className="text-gray-200"> Promotes biodiversity conservation by monitoring collection zones.</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 5 ? (
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Research and References</h3>
+                              
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">📄 Research Papers</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div className="bg-blue-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">• Blockchain in Agriculture: A PESTELS Analysis | IEEE Journals & Magazine | IEEE Xplore</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://share.google.com/6lqbE4Y8bMbGtsjmu</div>
+                                  </div>
+                                  <div className="bg-blue-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">• Hyperledger Fabric Documentation – Official reference for architecture & APIs</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://hyperledger-fabric.readthedocs.io/</div>
+                                  </div>
+                                  <div className="bg-blue-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">• Blockchains and Smart Contracts for the Internet of Things | IEEE Journals & Magazine | IEEE Xplore</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://share.google.com/4l3az56rpBECe1jkV</div>
+                                  </div>
+                                  <div className="bg-blue-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">• Decentralizing Privacy: Using Blockchain to Protect Personal Data | IEEE Conference Publication | IEEE Xplore</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://share.google.com/9NanILA20HFSCYWyP</div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-green-300 mb-3">🌿 Medicinal Plants & AYUSH</h4>
+                                <div className="bg-green-500/10 p-3 rounded-lg text-sm">
+                                  <div className="font-bold text-white">• Ministry of AYUSH – Guidelines for medicinal plant conservation & traceability</div>
+                                  <div className="text-gray-200 text-xs mt-1">🔗 https://www.ayush.gov.in/</div>
+                                </div>
+                              </div>
+
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-purple-300 mb-3">🔧 Existing Systems</h4>
+                                <div className="space-y-3 text-sm">
+                                  <div className="bg-purple-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">National Medicinal Plants Board (NMPB) – Policies on sustainable harvesting</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://www.nmpb.nic.in/</div>
+                                  </div>
+                                  <div className="bg-purple-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">• Google Maps Geolocation API – GPS integration</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://developers.google.com/maps/documentation/geolocation</div>
+                                  </div>
+                                  <div className="bg-purple-500/10 p-3 rounded-lg">
+                                    <div className="font-bold text-white">• OpenStreetMap – Open-source mapping alternative</div>
+                                    <div className="text-gray-200 text-xs mt-1">🔗 https://www.openstreetmap.org/</div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <h4 className="text-base font-bold text-orange-300 mb-3">📱 SMS & Notifications</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Gupshup SMS API (India-focused):</span>
+                                    <div className="text-gray-200 text-xs ml-4">🔗 https://www.gupshup.io/</div>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Twilio SMS API (Global):</span>
+                                    <div className="text-gray-200 text-xs ml-4">🔗 https://www.twilio.com/sms</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">System Overview</h3>
+                              <div className="space-y-3 text-sm">
+                                <div>
+                                  <span className="font-bold text-white">• Comprehensive Solution:</span>
+                                  <span className="text-gray-200"> End-to-end blockchain traceability for Ayurvedic herbs</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Technology Stack:</span>
+                                  <span className="text-gray-200"> Hyperledger Fabric, React, Node.js, and IPFS</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white">• Target Users:</span>
+                                  <span className="text-gray-200"> Farmers, manufacturers, regulators, and consumers</span>
+                                </div>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// Default implementation for demonstration
+const App = () => {
+  const handleEnter = () => {
+    alert('Entering HerbionYX Platform...');
+  };
+
+  return <ParallaxLandingPage onEnter={handleEnter} />;
+};
+
+export default App;
