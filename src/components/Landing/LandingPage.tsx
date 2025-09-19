@@ -23,9 +23,9 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     {
       id: 1,
       icon: Info,
-      title: "SIH 2025",
-      description: "Smart India Hackathon 2025 - Problem Statement ID: 25027",
-      details: "Problem Statement Title: Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label. Theme: Blockchain & Cybersecurity. PS Category: Software. Team Name: The Sentinels",
+      title: "Smart India Hackathon 2025",
+      description: "Problem Statement ID: 25027 | Theme: Blockchain & Cybersecurity | PS Category: Software",
+      details: "Problem Statement Title: Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label. Team ID: [To be assigned]. Team Name: The Sentinels. This hackathon focuses on creating innovative blockchain solutions for healthcare transparency and supply chain management in the traditional medicine sector.",
       color: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-400/30"
     },
@@ -450,17 +450,6 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                         <div>
                           <h3 className="text-lg font-semibold text-white mb-2">Details</h3>
                           <p className="text-gray-200 text-sm leading-relaxed">{windowData.details}</p>
-                        </div>
-
-                        <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
-                          <div className="flex items-center justify-center h-32 bg-white/5 rounded-lg border border-dashed border-white/20">
-                            <div className="text-center">
-                              <div className="w-12 h-12 mx-auto mb-2 bg-white/10 rounded-full flex items-center justify-center">
-                                <windowData.icon className="h-6 w-6 text-white/70" />
-                              </div>
-                              <p className="text-white/70 text-sm font-medium">SIH 2025 Documentation</p>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </div>
