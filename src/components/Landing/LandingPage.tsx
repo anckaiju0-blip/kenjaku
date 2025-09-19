@@ -58,7 +58,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     },
     {
       id: 5,
-      icon: gear,
+      icon: Users,
       title: "TECHNICAL APPROACH",
       description: "Experienced multidisciplinary team with proven expertise in blockchain, healthcare, and system integration for successful delivery",
       details: "Our team comprises blockchain developers, healthcare domain experts, UI/UX designers, and project managers with combined 50+ years experience in delivering enterprise solutions.",
