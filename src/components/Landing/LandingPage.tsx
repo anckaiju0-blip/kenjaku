@@ -25,7 +25,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       icon: Info,
       title: "Smart India Hackathon 2025",
       description: "Problem Statement ID: 25027 | Theme: Blockchain & Cybersecurity | PS Category: Software",
-      details: "Problem Statement Title: Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label. Team ID: [To be assigned]. Team Name: The Sentinels. This hackathon focuses on creating innovative blockchain solutions for healthcare transparency and supply chain management in the traditional medicine sector.",
+      details: "Complete hackathon details including problem statement, theme, category, and team information for the Smart India Hackathon 2025 blockchain-based Ayurvedic herb traceability system.",
       color: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-400/30"
     },
@@ -67,8 +67,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     },
     {
       id: 6,
-      icon: Shield,
-      title: "Security & Compliance",
+      icon: Leaf,
+      title: "HERBIONYX",
       description: "Comprehensive blockchain solution with innovative features, technical approach, and problem-solving capabilities",
       details: "Our platform combines proven blockchain technology with geo-tagging for Ayurvedic herbs, low-connectivity SMS integration for rural participation, standardized FHIR-style metadata for global interoperability, and practical incentives linking verified sustainable practices to premium pricing for farmers.",
       color: "from-pink-500/10 to-rose-500/10",
@@ -443,7 +443,37 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                       
                       <div className="space-y-4">
                         <div>
-                          {hoveredWindow === 2 ? ( // Feasibility & Viability (Target icon, index 2)
+                          {hoveredWindow === 0 ? ( // Smart India Hackathon 2025 (Info icon, index 0)
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">Smart India Hackathon 2025</h3>
+                              <div className="space-y-3 text-sm">
+                                <div>
+                                  <span className="font-bold text-white underline">Problem Statement ID</span>
+                                  <span className="text-gray-200"> – 25027</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white underline">Problem Statement Title</span>
+                                  <span className="text-gray-200"> – Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white underline">Theme</span>
+                                  <span className="text-gray-200"> – Blockchain & Cybersecurity</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white underline">PS Category</span>
+                                  <span className="text-gray-200"> – Software</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white underline">Team ID</span>
+                                  <span className="text-gray-200"> –</span>
+                                </div>
+                                <div>
+                                  <span className="font-bold text-white underline">Team Name</span>
+                                  <span className="text-gray-200"> – The Sentinels</span>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 2 ? ( // Feasibility & Viability (Target icon, index 2)
                             <>
                               <h3 className="text-lg font-semibold text-white mb-3">Feasibility and Viability Analysis</h3>
                               
@@ -546,215 +576,4 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 <h4 className="text-base font-bold text-blue-300 mb-3">🎯 Potential Impact</h4>
                                 <div className="space-y-3 text-sm">
                                   <div>
-                                    <span className="font-bold text-white underline">Collectors/Farmers:</span>
-                                    <span className="text-gray-200"> Get fair prices, recognition, and trust by proving sustainable harvesting.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white underline">Manufacturers:</span>
-                                    <span className="text-gray-200"> Gain authentic raw materials, reducing adulteration risks.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white underline">Consumers:</span>
-                                    <span className="text-gray-200"> Can scan QR code to verify origin → trust in AYUSH-certified products.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white underline">Regulators (AYUSH, Govt):</span>
-                                    <span className="text-gray-200"> Real-time monitoring of herbal supply chains → better policy enforcement.</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Benefits Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-green-300 mb-3">💰 Benefits</h4>
-                                
-                                {/* Social Benefits */}
-                                <div className="mb-4">
-                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
-                                    <h5 className="text-white font-bold text-center">SOCIAL</h5>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Empowers rural communities with digital inclusion.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Builds trust in traditional medicine through transparency.</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                {/* Economic Benefits */}
-                                <div className="mb-4">
-                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
-                                    <h5 className="text-white font-bold text-center">ECONOMIC</h5>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Reduces fraud and adulteration → boosts herbal exports.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Verified supply chain → increases market value of Indian herbs.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Incentivizes sustainable harvesting with premium pricing.</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                {/* Environmental Benefits */}
-                                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
-                                  <div className="bg-blue-500/20 p-3 rounded-lg mb-2">
-                                    <h5 className="text-white font-bold text-center">ENVIRONMENTAL</h5>
-                                  </div>
-                                  <div className="space-y-2 text-sm">
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Prevents over-harvesting with geo-tracking + quotas.</span>
-                                    </div>
-                                    <div>
-                                      <span className="font-bold text-white">•</span>
-                                      <span className="text-gray-200"> Promotes biodiversity conservation by monitoring collection zones.</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
-                          ) : hoveredWindow === 5 ? ( // Security & Compliance (Shield icon, index 5)
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-3">HerbionYX - Blockchain Traceability for Ayurvedic Herbs</h3>
-                              
-                              {/* Proposed Solution Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-blue-300 mb-3">💡 Proposed Solution</h4>
-                                <div className="bg-blue-500/10 p-4 rounded-xl border border-blue-400/30">
-                                  <p className="text-sm text-gray-200">
-                                    A permissioned blockchain platform (Hyperledger Fabric) that records geo-tagged harvest, processing, testing, and packaging events, and links them to QR codes on final products for consumer and regulatory verification.
-                                  </p>
-                                </div>
-                              </div>
-
-                              {/* Innovation & Uniqueness Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-purple-300 mb-3">🎓 Innovation & Uniqueness</h4>
-                                <div className="space-y-2 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">• Blockchain + Geo-tagging:</span>
-                                    <span className="text-gray-200"> Proven technology, but rarely applied to Ayurveda.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Low-connectivity Inclusion:</span>
-                                    <span className="text-gray-200"> SMS-to-blockchain sync enables rural collectors to participate.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Standardized Metadata (FHIR-style):</span>
-                                    <span className="text-gray-200"> Makes data interoperable with global systems (health & supply chain).</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Practical Incentives:</span>
-                                    <span className="text-gray-200"> Verified sustainable practices can be linked to premium pricing, motivating farmers.</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Solution Approach Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-orange-300 mb-3">🧩 Solution Approach</h4>
-                                <div className="space-y-2 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">• Geo-tagged Data Capture:</span>
-                                    <span className="text-gray-200"> Farmers/collectors use GPS-enabled mobile app or SMS (for offline areas). Data: location, species, collector ID, timestamp.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Smart Contracts:</span>
-                                    <span className="text-gray-200"> Automatically validate harvesting rules (allowed zones, seasons, and limits from NMPB guidelines).</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Processing & Testing:</span>
-                                    <span className="text-gray-200"> Labs/processors upload test certificates (DNA barcoding, pesticide, moisture) and steps (drying, grinding). Each step logged immutably.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Product Labeling:</span>
-                                    <span className="text-gray-200"> When formulation is done, blockchain generates unique QR codes.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Consumer Portal:</span>
-                                    <span className="text-gray-200"> QR code scan shows the entire chain of custody (farm → lab → factory → retail), improving trust and compliance.</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Addressing the Problem Section */}
-                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
-                                <h4 className="text-base font-bold text-green-300 mb-3">💡 Addressing the Problem</h4>
-                                <div className="space-y-2 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
-                                    <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Opaque Supply Chain:</span>
-                                    <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Sustainability Risks:</span>
-                                    <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Consumer Mistrust:</span>
-                                    <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Export Barriers:</span>
-                                    <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
-                          ) : (
-                            // All other windows show "Addressing the Problem" format
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-3">Addressing the Problem</h3>
-                              <div className="space-y-3 text-sm">
-                                <div>
-                                  <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
-                                  <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Opaque Supply Chain:</span>
-                                  <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Sustainability Risks:</span>
-                                  <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Consumer Mistrust:</span>
-                                  <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Export Barriers:</span>
-                                  <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
-                                </div>
-                              </div>
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                );
-              })()}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default ParallaxLandingPage;
+                                    <span className="font-bold text-white underline">Collectors
