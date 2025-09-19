@@ -23,9 +23,9 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     {
       id: 1,
       icon: Info,
-      title: "SIH Info",
-      description: "Smart India Hackathon 2025 - Problem Statement ID 25027: Blockchain-based botanical traceability system for Ayurvedic herbs with geo-tagging",
-      details: "Problem Statement: Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label. Theme: Blockchain & Cybersecurity | Category: Software | Team: The Sentinels",
+      title: "SIH 2025",
+      description: "Smart India Hackathon 2025 - Problem Statement ID: 25027",
+      details: "Problem Statement Title: Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label. Theme: Blockchain & Cybersecurity. PS Category: Software. Team Name: The Sentinels",
       color: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-400/30"
     },
@@ -453,35 +453,14 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                         </div>
 
                         <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
-                          {hoveredWindow === 0 ? (
-                            <div className="flex items-center justify-center">
-                              <div className="bg-white p-3 rounded-lg">
-                                <svg width="120" height="120" viewBox="0 0 200 200" className="block">
-                                  <rect width="200" height="200" fill="white"/>
-                                  <rect x="10" y="10" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
-                                  <rect x="130" y="10" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
-                                  <rect x="10" y="130" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
-                                  <rect x="25" y="25" width="30" height="30" fill="black"/>
-                                  <rect x="145" y="25" width="30" height="30" fill="black"/>
-                                  <rect x="25" y="145" width="30" height="30" fill="black"/>
-                                  <rect x="80" y="10" width="10" height="10" fill="black"/>
-                                  <rect x="100" y="10" width="10" height="10" fill="black"/>
-                                  <rect x="80" y="30" width="10" height="10" fill="black"/>
-                                  <rect x="90" y="30" width="10" height="10" fill="black"/>
-                                  <rect x="110" y="30" width="10" height="10" fill="black"/>
-                                </svg>
+                          <div className="flex items-center justify-center h-32 bg-white/5 rounded-lg border border-dashed border-white/20">
+                            <div className="text-center">
+                              <div className="w-12 h-12 mx-auto mb-2 bg-white/10 rounded-full flex items-center justify-center">
+                                <windowData.icon className="h-6 w-6 text-white/70" />
                               </div>
+                              <p className="text-white/70 text-sm font-medium">SIH 2025 Documentation</p>
                             </div>
-                          ) : (
-                            <div className="flex items-center justify-center h-32 bg-white/5 rounded-lg border border-dashed border-white/20">
-                              <div className="text-center">
-                                <div className="w-12 h-12 mx-auto mb-2 bg-white/10 rounded-full flex items-center justify-center">
-                                  <windowData.icon className="h-6 w-6 text-white/70" />
-                                </div>
-                                <p className="text-white/70 text-sm font-medium">Content Preview</p>
-                              </div>
-                            </div>
-                          )}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -496,13 +475,4 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
   );
 };
 
-// Demo wrapper component to show the landing page
-const DemoWrapper = () => {
-  const handleEnter = () => {
-    alert('Platform entered! This would navigate to the main application.');
-  };
-
-  return <ParallaxLandingPage onEnter={handleEnter} />;
-};
-
-export default DemoWrapper;
+export default ParallaxLandingPage;
