@@ -32,7 +32,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     {
       id: 2,
       icon: Settings,
-      title: "Technical Approach",
+      title: "RESEARCH  AND REFERENCES",
       description: "Hyperledger Fabric blockchain with React frontend, Node.js microservices, and IPFS storage for decentralized data management",
       details: "Our technical stack leverages Hyperledger Fabric for enterprise-grade blockchain, React for responsive UI, Node.js microservices architecture, and IPFS for decentralized storage. This ensures scalability, security, and performance.",
       color: "from-purple-500/10 to-indigo-500/10",
