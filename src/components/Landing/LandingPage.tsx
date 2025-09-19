@@ -67,7 +67,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     },
     {
       id: 6,
-      icon: Shield,
+      icon: Leaf,
       title: "HERBIONYX",
       description: "Comprehensive blockchain solution with innovative features, technical approach, and problem-solving capabilities",
       details: "Our platform combines proven blockchain technology with geo-tagging for Ayurvedic herbs, low-connectivity SMS integration for rural participation, standardized FHIR-style metadata for global interoperability, and practical incentives linking verified sustainable practices to premium pricing for farmers.",
