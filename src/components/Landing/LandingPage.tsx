@@ -69,8 +69,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       id: 6,
       icon: Shield,
       title: "Security & Compliance",
-      description: "Enterprise-grade security protocols, regulatory compliance, and data protection ensuring safe and legal operations",
-      details: "Implements end-to-end encryption, multi-factor authentication, GDPR compliance, and regulatory adherence. Security audited architecture with 99.9% uptime guarantee.",
+      description: "Enterprise-grade blockchain security with comprehensive regulatory compliance and data protection protocols",
+      details: "Our blockchain platform implements immutable ledger technology preventing data tampering, complete supply chain transparency with time-location tracking, smart contract enforcement of conservation rules, QR code verification for consumer trust, and simplified AYUSH compliance for international trade certifications.",
       color: "from-pink-500/10 to-rose-500/10",
       borderColor: "border-pink-400/30"
     }
@@ -417,7 +417,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
             onMouseLeave={handleModalLeave}
           >
             <div 
-              className="modal-content relative max-w-xl w-full max-h-[80vh] overflow-auto bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl"
+              className="modal-content relative max-w-2xl w-full max-h-[85vh] overflow-auto bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
               style={{
                 backdropFilter: 'blur(20px)',
@@ -443,31 +443,27 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                       
                       <div className="space-y-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white mb-3">Smart India Hackathon 2025</h3>
+                          <h3 className="text-lg font-semibold text-white mb-3">Addressing the Problem</h3>
                           <div className="space-y-3 text-sm">
                             <div>
-                              <span className="font-bold text-white">Problem Statement ID</span>
-                              <span className="text-gray-200"> – 25027</span>
+                              <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
+                              <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
                             </div>
                             <div>
-                              <span className="font-bold text-white">Problem Statement Title</span>
-                              <span className="text-gray-200">- Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label</span>
+                              <span className="font-bold text-white">• Opaque Supply Chain:</span>
+                              <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
                             </div>
                             <div>
-                              <span className="font-bold text-white">Theme</span>
-                              <span className="text-gray-200">- Blockchain & Cybersecurity</span>
+                              <span className="font-bold text-white">• Sustainability Risks:</span>
+                              <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
                             </div>
                             <div>
-                              <span className="font-bold text-white">PS Category</span>
-                              <span className="text-gray-200">- Software</span>
+                              <span className="font-bold text-white">• Consumer Mistrust:</span>
+                              <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
                             </div>
                             <div>
-                              <span className="font-bold text-white">Team ID</span>
-                              <span className="text-gray-200">-</span>
-                            </div>
-                            <div>
-                              <span className="font-bold text-white">Team Name</span>
-                              <span className="text-gray-200">- The Sentinels</span>
+                              <span className="font-bold text-white">• Export Barriers:</span>
+                              <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
                             </div>
                           </div>
                         </div>
