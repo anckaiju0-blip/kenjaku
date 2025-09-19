@@ -13,8 +13,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
   const [isMouseMoving, setIsMouseMoving] = useState(false);
   const [autoRotation, setAutoRotation] = useState(0);
   
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const mouseMoveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimeoutRef = useRef<number | null>(null);
+  const mouseMoveTimeoutRef = useRef<number | null>(null);
   const autoRotationRef = useRef<number>();
   const [lightningPath, setLightningPath] = useState('');
   const rafRef = useRef<number>();
@@ -43,7 +43,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       icon: Target,
       title: "Feasibility & Viability",
       description: "Comprehensive feasibility analysis, real-world challenges assessment, and practical implementation strategies for nationwide deployment",
-      details: "Our comprehensive analysis covers technology readiness with Hyperledger Fabric, low-cost cloud deployment, GPS-enabled data capture, and SMS integration for low-connectivity areas. We address real-world challenges including farmer adoption barriers, connectivity gaps, data accuracy concerns, and operational costs through practical strategies like farmer training programs, offline-first applications, verification layers, and partnership models with AYUSH ministry and pharma companies.",
+      details: "Our comprehensive analysis covers technology readiness with Hyperledger Fabric, low-cost cloud deployment, GPS-enabled data capture, and SMS integration for low-connectivity areas.",
       color: "from-green-500/10 to-emerald-500/10",
       borderColor: "border-green-400/30"
     },
@@ -52,7 +52,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       icon: TrendingUp,
       title: "Impact & Benefits",
       description: "Comprehensive impact analysis showcasing potential benefits for all stakeholders and measurable social, economic, and environmental outcomes",
-      details: "Our solution delivers transformative impact across multiple dimensions: empowering rural communities through fair pricing and digital inclusion, building consumer trust through transparency, reducing fraud to boost herbal exports, incentivizing sustainable harvesting practices, and promoting biodiversity conservation through geo-tracking and quotas.",
+      details: "Our solution delivers transformative impact across multiple dimensions: empowering rural communities through fair pricing and digital inclusion, building consumer trust through transparency.",
       color: "from-orange-500/10 to-red-500/10",
       borderColor: "border-orange-400/30"
     },
@@ -70,7 +70,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       icon: Leaf,
       title: "HERBIONYX",
       description: "Comprehensive blockchain solution with innovative features, technical approach, and problem-solving capabilities",
-      details: "Our platform combines proven blockchain technology with geo-tagging for Ayurvedic herbs, low-connectivity SMS integration for rural participation, standardized FHIR-style metadata for global interoperability, and practical incentives linking verified sustainable practices to premium pricing for farmers.",
+      details: "Our platform combines proven blockchain technology with geo-tagging for Ayurvedic herbs, low-connectivity SMS integration for rural participation, and standardized metadata for global interoperability.",
       color: "from-pink-500/10 to-rose-500/10",
       borderColor: "border-pink-400/30"
     }
@@ -194,33 +194,37 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
     };
   }, [hoveredWindow]);
 
-  // Consolidated event listeners
+  // Consolidated event listeners with proper cleanup
   useEffect(() => {
-    const events = [
-      ['scroll', handleScroll, { passive: true }],
-      ['mousemove', handleMouseMove, { passive: true }],
-      ['keydown', handleKeyDown]
-    ] as const;
+    const scrollHandler = handleScroll;
+    const mouseMoveHandler = handleMouseMove;
+    const keyHandler = handleKeyDown;
+    const clickHandler = handleClick;
 
-    events.forEach(([event, handler, options]) => {
-      window.addEventListener(event, handler, options);
-    });
-
-    document.addEventListener('click', handleClick);
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    window.addEventListener('mousemove', mouseMoveHandler, { passive: true });
+    window.addEventListener('keydown', keyHandler);
+    document.addEventListener('click', clickHandler);
 
     return () => {
-      events.forEach(([event, handler]) => {
-        window.removeEventListener(event, handler);
-      });
-      document.removeEventListener('click', handleClick);
+      window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('mousemove', mouseMoveHandler);
+      window.removeEventListener('keydown', keyHandler);
+      document.removeEventListener('click', clickHandler);
       
       // Cleanup timeouts and animation frames
-      [hoverTimeoutRef, mouseMoveTimeoutRef].forEach(ref => {
-        if (ref.current) clearTimeout(ref.current);
-      });
-      [rafRef, autoRotationRef].forEach(ref => {
-        if (ref.current) cancelAnimationFrame(ref.current);
-      });
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      if (mouseMoveTimeoutRef.current) {
+        clearTimeout(mouseMoveTimeoutRef.current);
+      }
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+      if (autoRotationRef.current) {
+        cancelAnimationFrame(autoRotationRef.current);
+      }
     };
   }, [handleScroll, handleMouseMove, handleKeyDown, handleClick]);
 
@@ -251,9 +255,9 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
 
   const closeModal = useCallback(() => setHoveredWindow(null), []);
 
-  // Memoized window position calculation - FIXED VERSION
+  // Memoized window position calculation with safe window access
   const windowPositions = useMemo(() => {
-    const radius = window.innerWidth > 768 ? 280 : 180;
+    const radius = (typeof window !== 'undefined' && window.innerWidth > 768) ? 280 : 180;
     return circularWindows.map((_, index) => {
       // Calculate angle based on activeIndex rotation
       const baseAngle = (index / circularWindows.length) * 360;
@@ -337,10 +341,10 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
             </h1>
           </div>
 
-          {/* FIXED: Container for centered positioning */}
+          {/* Container for centered positioning */}
           <div className="absolute inset-0 flex items-center justify-center z-25">
             
-            {/* Central Enter Button - HIGHER Z-INDEX */}
+            {/* Central Enter Button */}
             <div className="relative z-40">
               <div className="relative">
                 <div className="absolute -inset-8 md:-inset-12 rounded-full border border-white/20 animate-ping opacity-70" />
@@ -363,7 +367,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
               </div>
             </div>
 
-            {/* FIXED: Revolving Circular Windows Container */}
+            {/* Revolving Circular Windows Container */}
             <div 
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
               style={{
@@ -373,7 +377,7 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                 transition: hoveredWindow !== null ? 'transform 0.1s ease-out' : 'none'
               }}
             >
-              {/* FIXED: Properly centered circle container */}
+              {/* Properly centered circle container */}
               <div className="relative w-0 h-0">
                 {circularWindows.map((window, index) => {
                   const position = windowPositions[index];
@@ -431,149 +435,44 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                     <div className={`absolute inset-0 bg-gradient-to-br ${windowData.color} rounded-3xl opacity-30`} />
                     
                     <div className="relative z-10 p-6 md:p-8">
-                      <div className="flex items-center mb-6">
-                        <div className={`p-3 rounded-xl mr-4 bg-white/10 backdrop-blur-xl ${windowData.borderColor} border`}>
-                          <windowData.icon className="h-8 w-8 text-white" />
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center">
+                          <div className={`p-3 rounded-xl mr-4 bg-white/10 backdrop-blur-xl ${windowData.borderColor} border`}>
+                            <windowData.icon className="h-8 w-8 text-white" />
+                          </div>
+                          <div>
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">{windowData.title}</h2>
+                            <p className="text-blue-200 text-sm">Smart India Hackathon 2025</p>
+                          </div>
                         </div>
-                        <div>
-                          <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">{windowData.title}</h2>
-                          <p className="text-blue-200 text-sm">Smart India Hackathon 2025</p>
-                        </div>
+                        <button
+                          onClick={closeModal}
+                          className="text-white/60 hover:text-white text-2xl font-bold p-2 hover:bg-white/10 rounded-full transition-all duration-200"
+                        >
+                          ×
+                        </button>
                       </div>
                       
                       <div className="space-y-4">
-                        <div>
-                          {hoveredWindow === 0 ? ( // Smart India Hackathon 2025 (Info icon, index 0)
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-3">Smart India Hackathon 2025</h3>
-                              <div className="space-y-3 text-sm">
-                                <div>
-                                  <span className="font-bold text-white underline">Problem Statement ID</span>
-                                  <span className="text-gray-200"> – 25027</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white underline">Problem Statement Title</span>
-                                  <span className="text-gray-200"> – Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white underline">Theme</span>
-                                  <span className="text-gray-200"> – Blockchain & Cybersecurity</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white underline">PS Category</span>
-                                  <span className="text-gray-200"> – Software</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white underline">Team ID</span>
-                                  <span className="text-gray-200"> –</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white underline">Team Name</span>
-                                  <span className="text-gray-200"> – The Sentinels</span>
-                                </div>
-                              </div>
-                            </>
-                          ) : hoveredWindow === 2 ? ( // Feasibility & Viability (Target icon, index 2)
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-3">Feasibility and Viability Analysis</h3>
-                              
-                              {/* Feasibility Analysis Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-blue-300 mb-3">🔍 Feasibility Analysis</h4>
-                                <div className="space-y-2 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">• Technology readiness:</span>
-                                    <span className="text-gray-200"> Hyperledger Fabric is open-source, already tested in supply chain (e.g., food traceability).</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Low-cost deployment:</span>
-                                    <span className="text-gray-200"> Runs on commodity cloud servers (AWS/Azure/On-Prem); no per-transaction fees.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Data capture:</span>
-                                    <span className="text-gray-200"> GPS-enabled Android phones (already in use by most farmers) + QR code printers/scanners (cheap, available).</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• SMS integration:</span>
-                                    <span className="text-gray-200"> Existing APIs (Twilio, Gupshup, BSNL SMS Gateway) work even in low-connectivity areas.</span>
-                                  </div>
-                                </div>
-                              </div>
+                        <p className="text-gray-300 leading-relaxed">
+                          {windowData.description}
+                        </p>
+                        <div className="border-t border-white/20 pt-4">
+                          <p className="text-gray-200 text-sm leading-relaxed">
+                            {windowData.details}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
-                              {/* Challenges Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-orange-300 mb-3">⚠️ Challenges (Real-World Issues)</h4>
-                                <div className="space-y-2 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">1. Farmer adoption barrier →</span>
-                                    <span className="text-gray-200"> Farmers may not be tech-savvy.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">2. Connectivity gaps →</span>
-                                    <span className="text-gray-200"> Remote villages may lack 4G.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">3. Data accuracy →</span>
-                                    <span className="text-gray-200"> Fake entries or wrong plant identification possible.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">4. Operational costs →</span>
-                                    <span className="text-gray-200"> Training, device distribution, server hosting.</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Practical Strategies Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-green-300 mb-3">⚙️ Practical Strategies</h4>
-                                <div className="space-y-2 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">• Farmer Training & Incentives:</span>
-                                    <span className="text-gray-200"> Hands-on training + premium price for verified herbs.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Offline-first app:</span>
-                                    <span className="text-gray-200"> Local storage → syncs when internet available (already supported in React Native, Flutter).</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Verification Layer:</span>
-                                    <span className="text-gray-200"> Lab test + GPS cross-check ensures no fake entries.</span>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">• Partnership Model:</span>
-                                    <span className="text-gray-200"> Costs split between AYUSH ministry, pharma companies, and cooperatives.</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              {/* Revenue Model Section */}
-                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
-                                <h4 className="text-base font-bold text-purple-300 mb-3">💰 Revenue Model</h4>
-                                <div className="space-y-3 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white">1. Subscription from Manufacturers & Exporters</span>
-                                    <div className="ml-4 space-y-1 text-gray-200">
-                                      <div>• Ayurvedic product manufacturers/exporters pay a monthly/annual fee to use HERBIONYX for traceability, compliance reporting, and QR labeling.</div>
-                                      <div>• Logical → these companies benefit directly (export clearance, consumer trust).</div>
-                                    </div>
-                                  </div>
-                                  <div>
-                                    <span className="font-bold text-white">2. Government/AYUSH Contracts</span>
-                                    <div className="ml-4 space-y-1 text-gray-200">
-                                      <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
-                                      <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </>
-                          ) : hoveredWindow === 3 ? ( // Impact & Benefits (TrendingUp icon, index 3)
-                            <>
-                              <h3 className="text-lg font-semibold text-white mb-3">Impact and Benefits</h3>
-                              
-                              {/* Potential Impact Section */}
-                              <div className="mb-6">
-                                <h4 className="text-base font-bold text-blue-300 mb-3">🎯 Potential Impact</h4>
-                                <div className="space-y-3 text-sm">
-                                  <div>
-                                    <span className="font-bold text-white underline">Collectors
+export default ParallaxLandingPage;
