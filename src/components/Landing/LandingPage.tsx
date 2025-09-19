@@ -715,30 +715,56 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                 </div>
                               </div>
                             </>
+                          ) : hoveredWindow === 0 ? (
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-2">Overview</h3>
+                              <p className="text-gray-100 text-sm leading-relaxed mb-4">{windowData.description}</p>
+                              
+                              <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">Details</h3>
+                                <p className="text-gray-200 text-sm leading-relaxed">{windowData.details}</p>
+                              </div>
+
+                              <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
+                                <div className="flex items-center justify-center">
+                                  <div className="bg-white p-3 rounded-lg">
+                                    <svg width="120" height="120" viewBox="0 0 200 200" className="block">
+                                      <rect width="200" height="200" fill="white"/>
+                                      <rect x="10" y="10" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
+                                      <rect x="130" y="10" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
+                                      <rect x="10" y="130" width="60" height="60" fill="none" stroke="black" strokeWidth="10"/>
+                                      <rect x="25" y="25" width="30" height="30" fill="black"/>
+                                      <rect x="145" y="25" width="30" height="30" fill="black"/>
+                                      <rect x="25" y="145" width="30" height="30" fill="black"/>
+                                      <rect x="80" y="10" width="10" height="10" fill="black"/>
+                                      <rect x="100" y="10" width="10" height="10" fill="black"/>
+                                      <rect x="80" y="30" width="10" height="10" fill="black"/>
+                                      <rect x="90" y="30" width="10" height="10" fill="black"/>
+                                      <rect x="110" y="30" width="10" height="10" fill="black"/>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
                           ) : (
                             // All other windows show "Addressing the Problem" format
                             <>
-                              <h3 className="text-lg font-semibold text-white mb-3">Addressing the Problem</h3>
-                              <div className="space-y-3 text-sm">
-                                <div>
-                                  <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
-                                  <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Opaque Supply Chain:</span>
-                                  <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Sustainability Risks:</span>
-                                  <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Consumer Mistrust:</span>
-                                  <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
-                                </div>
-                                <div>
-                                  <span className="font-bold text-white">• Export Barriers:</span>
-                                  <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
+                              <h3 className="text-lg font-semibold text-white mb-2">Overview</h3>
+                              <p className="text-gray-100 text-sm leading-relaxed mb-4">{windowData.description}</p>
+                              
+                              <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">Details</h3>
+                                <p className="text-gray-200 text-sm leading-relaxed">{windowData.details}</p>
+                              </div>
+
+                              <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-xl">
+                                <div className="flex items-center justify-center h-32 bg-white/5 rounded-lg border border-dashed border-white/20">
+                                  <div className="text-center">
+                                    <div className="w-12 h-12 mx-auto mb-2 bg-white/10 rounded-full flex items-center justify-center">
+                                      <windowData.icon className="h-6 w-6 text-white/70" />
+                                    </div>
+                                    <p className="text-white/70 text-sm font-medium">Content Preview</p>
+                                  </div>
                                 </div>
                               </div>
                             </>
