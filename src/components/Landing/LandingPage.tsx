@@ -69,8 +69,8 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
       id: 6,
       icon: Shield,
       title: "Security & Compliance",
-      description: "Enterprise-grade blockchain security with comprehensive regulatory compliance and data protection protocols",
-      details: "Our blockchain platform implements immutable ledger technology preventing data tampering, complete supply chain transparency with time-location tracking, smart contract enforcement of conservation rules, QR code verification for consumer trust, and simplified AYUSH compliance for international trade certifications.",
+      description: "Comprehensive blockchain solution with innovative features, technical approach, and problem-solving capabilities",
+      details: "Our platform combines proven blockchain technology with geo-tagging for Ayurvedic herbs, low-connectivity SMS integration for rural participation, standardized FHIR-style metadata for global interoperability, and practical incentives linking verified sustainable practices to premium pricing for farmers.",
       color: "from-pink-500/10 to-rose-500/10",
       borderColor: "border-pink-400/30"
     }
@@ -533,6 +533,97 @@ const ParallaxLandingPage: React.FC<ParallaxLandingPageProps> = ({ onEnter }) =>
                                       <div>• Ministry of AYUSH or NMPB can fund/mandate HERBIONYX for certification and sustainable harvesting monitoring.</div>
                                       <div>• Logical → aligns with their mandate of standardization, biodiversity conservation, and export promotion.</div>
                                     </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : hoveredWindow === 5 ? ( // Security & Compliance (Shield icon, index 5)
+                            <>
+                              <h3 className="text-lg font-semibold text-white mb-3">HerbionYX - Blockchain Traceability for Ayurvedic Herbs</h3>
+                              
+                              {/* Proposed Solution Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-blue-300 mb-3">💡 Proposed Solution</h4>
+                                <div className="bg-blue-500/10 p-4 rounded-xl border border-blue-400/30">
+                                  <p className="text-sm text-gray-200">
+                                    A permissioned blockchain platform (Hyperledger Fabric) that records geo-tagged harvest, processing, testing, and packaging events, and links them to QR codes on final products for consumer and regulatory verification.
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Innovation & Uniqueness Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-purple-300 mb-3">🎓 Innovation & Uniqueness</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Blockchain + Geo-tagging:</span>
+                                    <span className="text-gray-200"> Proven technology, but rarely applied to Ayurveda.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Low-connectivity Inclusion:</span>
+                                    <span className="text-gray-200"> SMS-to-blockchain sync enables rural collectors to participate.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Standardized Metadata (FHIR-style):</span>
+                                    <span className="text-gray-200"> Makes data interoperable with global systems (health & supply chain).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Practical Incentives:</span>
+                                    <span className="text-gray-200"> Verified sustainable practices can be linked to premium pricing, motivating farmers.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Solution Approach Section */}
+                              <div className="mb-6">
+                                <h4 className="text-base font-bold text-orange-300 mb-3">🧩 Solution Approach</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Geo-tagged Data Capture:</span>
+                                    <span className="text-gray-200"> Farmers/collectors use GPS-enabled mobile app or SMS (for offline areas). Data: location, species, collector ID, timestamp.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Smart Contracts:</span>
+                                    <span className="text-gray-200"> Automatically validate harvesting rules (allowed zones, seasons, and limits from NMPB guidelines).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Processing & Testing:</span>
+                                    <span className="text-gray-200"> Labs/processors upload test certificates (DNA barcoding, pesticide, moisture) and steps (drying, grinding). Each step logged immutably.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Product Labeling:</span>
+                                    <span className="text-gray-200"> When formulation is done, blockchain generates unique QR codes.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Consumer Portal:</span>
+                                    <span className="text-gray-200"> QR code scan shows the entire chain of custody (farm → lab → factory → retail), improving trust and compliance.</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Addressing the Problem Section */}
+                              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                                <h4 className="text-base font-bold text-green-300 mb-3">💡 Addressing the Problem</h4>
+                                <div className="space-y-2 text-sm">
+                                  <div>
+                                    <span className="font-bold text-white">• Mislabeling/Adulteration:</span>
+                                    <span className="text-gray-200"> Immutable ledger prevents data tampering.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Opaque Supply Chain:</span>
+                                    <span className="text-gray-200"> Every step recorded with time, location, and party involved.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Sustainability Risks:</span>
+                                    <span className="text-gray-200"> Smart contracts enforce conservation rules (no over-harvest, correct season).</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Consumer Mistrust:</span>
+                                    <span className="text-gray-200"> QR codes provide verified proof of authenticity.</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-bold text-white">• Export Barriers:</span>
+                                    <span className="text-gray-200"> Provenance records simplify compliance with AYUSH & international trade certifications.</span>
                                   </div>
                                 </div>
                               </div>
