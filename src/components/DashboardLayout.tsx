@@ -67,26 +67,42 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
 
         <nav className="flex-1 p-4 overflow-y-auto">
           {profile && (
-            <div className="mb-6">
-              <button
-                onClick={() => navigate('/profile')}
-                className="w-full p-4 bg-emerald-50 rounded-lg hover:bg-emerald-100 transition-colors"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <RoleIcon className="w-7 h-7 text-white" />
+            <>
+              <div className="mb-4">
+                <button
+                  onClick={() => navigate('/profile')}
+                  className="w-full p-4 bg-emerald-50 rounded-lg hover:bg-emerald-100 transition-colors"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <User className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0 text-left">
+                      <p className="text-xs text-gray-500 mb-1">Profile</p>
+                      <p className="text-sm font-semibold text-gray-900 truncate">
+                        {profile.full_name || profile.email}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0 text-left">
-                    <p className="text-sm font-semibold text-gray-900 truncate">
-                      {profile.full_name || profile.email}
-                    </p>
-                    <p className="text-xs text-emerald-700 font-medium">
-                      {roleLabels[profile.role]}
-                    </p>
+                </button>
+              </div>
+
+              <div className="mb-6">
+                <div className="w-full p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <RoleIcon className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0 text-left">
+                      <p className="text-xs text-gray-500 mb-1">Role</p>
+                      <p className="text-sm font-semibold text-gray-900">
+                        {roleLabels[profile.role]}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </button>
-            </div>
+              </div>
+            </>
           )}
 
           <div className="space-y-1">
