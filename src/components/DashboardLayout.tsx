@@ -40,6 +40,7 @@ export default function DashboardLayout({ children, currentPage }: DashboardLayo
   const { profile, signOut } = useAuth();
   const navigate = useNavigate();
 
+
   const handleSignOut = async () => {
     await signOut();
     navigate('/login');
